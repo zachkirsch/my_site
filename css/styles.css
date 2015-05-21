@@ -1,0 +1,37 @@
+/*html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+}
+
+p {
+	margin: 0;
+}
+#header {
+	height: 20%;
+	width: 100%;
+}
+
+#name {
+	text-align: center;
+	color: #D6DFE5;
+	font-size: 200%;
+}*/
+
+body {
+  padding-top: 50px;
+  background: #ACC1D1;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+#header {
+  background: #01121E;
+}
+.active {
+}
+

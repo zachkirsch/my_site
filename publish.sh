@@ -3,8 +3,8 @@ HOST=23.229.236.65  #This is the FTP servers host or IP address.
 USER=zachkirsch     #This is the FTP user that has access to the server.
 
 HTML_FILES=*.html
-CSS_FILES=*.css
-JS_FILES=*.js
+CSS_FILES=css/*
+JS_FILES=js/*
 
 # Read Password
 echo -n "Password: "
@@ -18,7 +18,11 @@ open $HOST
 user $USER $PASS
 cd public_html
 
-mput $HTML_FILES $CSS_FILES $JS_FILES
+mput $HTML_FILES
+cd css
+mput $CSS_FILES
+cd ../js
+mput $JS_FILES
 
 close
 bye
