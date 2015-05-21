@@ -35,8 +35,9 @@
 	<script>
 		$(document).ready(function(){
 			// contact div lengthens so that scroll-down animation from navbar isn't choppy
-			if ($(window).height() > 257*2)
-				$("#contact").height( $(window).height() - 270);
+			new_height = $(window).height() - 270;
+			if (new_height > 420)
+				$("#contact").height( new_height );
 		});
 	</script>
 
@@ -45,7 +46,7 @@
 <body id="page-top" class="index">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" id="navbar">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -157,7 +158,7 @@
                     <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="#" class="btn btn-lg btn-outline">
+                    <a href="static/resume.pdf" target="_blank" class="btn btn-lg btn-outline">
                         <i class="fa fa-download"></i>View My Resume
         			</a>
                 </div>
@@ -180,10 +181,10 @@
 						<p class="contact">(440) 781-6185</p>
                         <ul class="list-inline">
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/in/zkirsch" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                                <a href="https://github.com/zachkirsch" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
                             </li>
                         </ul>
                 </div>
@@ -197,7 +198,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Thanks to David Miller for the <a href="http://startbootstrap.com/template-overviews/freelancer/">Freelancer</a> theme!
+                        Thanks to David Miller for the <a href="http://startbootstrap.com/template-overviews/freelancer/" target="_blank">Freelancer</a> theme!
                     </div>
                 </div>
             </div>
