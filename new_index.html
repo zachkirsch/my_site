@@ -29,6 +29,17 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+	<!-- JQuery -->
+	<script src="js/jquery-1.11.3.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			// contact div lengthens so that scroll-down animation from navbar isn't choppy
+			if ($(window).height() > 257*2)
+				$("#contact").height( $(window).height() - 270);
+		});
+	</script>
+
 </head>
 
 <body id="page-top" class="index">
@@ -186,7 +197,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Thanks to David Miller for the <a href="http://startbootstrap.com/template-overviews/freelancer/">Freelancer theme!</a>
+                        Thanks to David Miller for the <a href="http://startbootstrap.com/template-overviews/freelancer/">Freelancer</a> theme!
                     </div>
                 </div>
             </div>
