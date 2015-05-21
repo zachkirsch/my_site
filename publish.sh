@@ -11,4 +11,14 @@ echo -n "Password: "
 read -s PASS
 
 # Send to site at godaddy server
-ftp -in -u ftp://$USER:$PASS@$HOST/public_html/ $HTML_FILES $CSS_FILES $JS_FILES
+
+## ENTERING FTP SHELL ##
+ftp -in << EOF
+open $HOST
+user $USER $PASS
+cd public_html
+
+mput $HTML_FILES $CSS_FILES $JS_FILES
+
+close
+bye
