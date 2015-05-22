@@ -36,15 +36,28 @@
 
 	<script>
 		$(document).ready(function(){
-			// contact div lengthens so that scroll-down animation from navbar isn't choppy
-			new_height = $(window).height() - 270;
-			if (new_height > 420)
-				$("#contact").height( new_height );
+			update_div_heights();
+			$( window ).resize(update_div_heights);
 
-			// header div lengthens so that it covers the whole screen
-			new_height = $(window).height();
-			if (new_height > $("#header").height())
-				$("#header").height( new_height );
+			function update_div_heights() {
+				update_header_height();
+				update_contact_height();
+			}
+
+			function update_header_height() {
+				// header div lengthens so that it covers the whole screen
+				new_height = $(window).height();
+				if (new_height > $("#header").height())
+					$("#header").height( new_height );
+			}
+
+			function update_contact_height() {
+				// contact div lengthens so that scroll-down animation from navbar isn't choppy
+				//new_height = $(window).height() - 270;
+				new_height = $(window).height() - $("#navbar").height()*2 - $("#footer").height()*2;
+				if (new_height > $("#contact").height())
+					$("#contact").height( new_height );
+			}
 		});
 	</script>
 
@@ -162,8 +175,8 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-					<p>I'm Zach Kirsch, a sophomore at Tufts University's School of Engineering, and I'm currently pursuing a B.S. in Computer Science and a B.A. in Math.</p>
-					<p>When it comes to programming, most of my experience comes from my courses in school. I've learned a lot about building programs in C++, and websites and servers using HTML and Javascript. I'm always trying to explore different areas of computer science on my own to learn new languages and technologies. Over this summer, I'm trying to build standalone web and mobile applications from the ground up.</p>
+					<p>Hi! I'm Zach Kirsch, a sophomore at Tufts University's School of Engineering, and I'm currently pursuing a B.S. in Computer Science and a B.A. in Math.</p>
+					<p>When it comes to programming, most of my experience comes from my courses in school. I've learned a lot about building programs in C++ and websites and servers using HTML and Javascript. I'm always trying to explore different areas of computer science on my own to learn new languages and technologies. Over this summer, I'm trying to build standalone web and mobile applications from the ground up.</p>
 					<p>When I'm not in front of the computer, I enjoy <a id="travel-history" href="travel-history.html" target="_blank">travelling with my family</a> or a casual game of poker with my friends.</p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -202,7 +215,7 @@
     </section>
 
 	<!-- Footer -->
-    <footer class="text-center">
+    <footer class="text-center" id="footer">
         <div class="footer-below">
             <div class="container">
                 <div class="row">

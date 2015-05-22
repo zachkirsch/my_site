@@ -343,7 +343,6 @@ form .row:first-child .floating-label-form-group {
 }
 
 #contact {
-	height: 612px;
 }
 
 footer {
@@ -400,6 +399,8 @@ footer .footer-below {
     border-radius: 100%;
     font-size: 20px;
     line-height: 28px;
+	background-color: rgba(51, 122, 183, .5);
+	border-color: rgba(46,109,164, .5)
 }
 
 .scroll-top .btn:focus {
