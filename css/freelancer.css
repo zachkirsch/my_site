@@ -188,10 +188,13 @@ section.success {
 section.success a,
 section.success a:hover,
 section.success a:focus,
-section.success a:active,
 section.success a.active {
     outline: 0;
     color: #fff;
+}
+
+#map-bucket-list {
+	text-decoration: underline;
 }
 
 @media(max-width:767px) {
@@ -253,6 +256,10 @@ section.success a.active {
 
 #portfolio * {
     z-index: 2;
+}
+
+a.proj-title {
+	color: black;
 }
 
 @media(min-width:767px) {
