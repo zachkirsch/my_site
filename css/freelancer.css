@@ -417,6 +417,11 @@ footer .footer-below {
     box-shadow: none;
 }
 
+.modal-body p {
+	text-align: justify;
+    text-justify: inter-word;
+}
+
 .portfolio-modal .modal-content h2 {
     margin: 0;
     font-size: 3em;

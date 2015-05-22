@@ -6,10 +6,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Zach Kirsch">
+	<link rel="icon" 
+      type="image/png" 
+      href="img/favicon.ico">
 
-    <title>Freelancer - Zach Kirsch Theme</title>
+    <title>Zach Kirsch</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -86,11 +88,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/me.png" alt="">
+                    <img class="img-responsive" src="img/me.png" alt="profile">
                     <div class="intro-text">
                         <span class="name">Zach Kirsch</span>
                         <hr class="star-light">
-                        <span class="skills">Computer Science Student at Tufts University</span>
+                        <span class="skills">&nbsp;</span>
                     </div>
                 </div>
             </div>
@@ -115,7 +117,7 @@
 								<p>Boggle</p>
                             </div>
                         </div>
-                        <img src="img/game.png" class="img-responsive" alt="">
+                        <img src="img/game.png" class="img-responsive" alt="boggle">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -126,7 +128,7 @@
 								<p>Nickel and Dine</p>
                             </div>
                         </div>
-                        <img src="img/cake.png" class="img-responsive" alt="">
+                        <img src="img/cake.png" class="img-responsive" alt="nickel and dine">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -137,7 +139,7 @@
 								<p>DebateHelper</p>
                             </div>
                         </div>
-                        <img src="img/pencil.png" class="img-responsive" alt="">
+                        <img src="img/pencil.png" class="img-responsive" alt="debatehelper">
                     </a>
                 </div>
             </div>
@@ -155,9 +157,9 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-					<p>I'm Zach Kirsch, a sophomore at Tufts University's School of Engineering. I am currently pursuing a B.S. in Computer Science and a B.A. in Math.</p>
-					<p>Most of my experience comes from my courses in school, but I'm trying to explore different areas of computer science on my own to learn as much as I can. Over the summer, I'm learning to build standalone web and mobile applications from the ground up.</p>
-					<p>When I'm not in front of the computer, I enjoy <a id="travel-history" href="travel-history.html" target="_blank">travelling to adventurous places with my family</a> and playing Frisbee with my friends.</p>
+					<p>I'm Zach Kirsch, a sophomore at Tufts University's School of Engineering, and I'm currently pursuing a B.S. in Computer Science and a B.A. in Math.</p>
+					<p>When it comes to programming, most of my experience comes from my courses in school. I've learned a lot about building programs in C++, and websites and servers using HTML and Javascript. I'm always trying to explore different areas of computer science on my own to learn new languages and technologies. Over this summer, I'm trying to build standalone web and mobile applications from the ground up.</p>
+					<p>When I'm not in front of the computer, I enjoy <a id="travel-history" href="travel-history.html" target="_blank">travelling with my family</a> or a casual game of poker with my friends.</p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="static/resume.pdf" target="_blank" class="btn btn-lg btn-outline">
@@ -229,19 +231,16 @@
                         <div class="modal-body">
                             <h2><a class="proj-title" href="boggle/" target="_blank">Boggle</a></h2>
                             <hr class="star-primary">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+							<p>I created the C++ backend of a <a href="boggle/" target="_blank">Boggle game</a> as a capstone project for my Data Structures course. The program features a 2D dynamic array for the board, a radix tree for the dictionary (to enable fast searching), and a recursive algorithm for solving the board. Source code is available <a href="http://zachkirsch.com#contact">upon request</a>.</p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Zach Kirsch</a>
-                                    </strong>
+                                <li>Class:
+                                    <strong>Data Structures</strong>
                                 </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
+                                    <strong>April 2015</strong>
                                 </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
+                                <li>Area:
+                                    <strong>C++ Backend Development</strong>
                                 </li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -265,19 +264,16 @@
                         <div class="modal-body">
                             <h2><a class="proj-title" href="nickelanddine/" target="_blank">Nickel and Dine</a></h2>
                             <hr class="star-primary">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+							<p>I worked on a team of four to create <a href="nickelanddine/">Nickel and Dine</a> for my Web Programming course. Nickel and Dine is a food delivery service for Tufts students to generate orders that meet each restaurant's delivery minimum and show the <i>final</i> cost of the order (tax, tip, and fees included). We created the server using Node.js, kept track of orders using a MongoDB database, and built the frontend with the help of Bootstrap. Source code is available <a href="http://zachkirsch.com#contact">upon request</a>.</p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Zach Kirsch</a>
-                                    </strong>
+                                <li>Class:
+                                    <strong>Web Programming</strong>
                                 </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
+                                    <strong>April 2015</strong>
                                 </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
+                                <li>Area:
+                                    <strong>Web Frontend & Backend Development</strong>
                                 </li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -299,21 +295,16 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2><a class="proj-title" href="http://debatehelper.com/" target="_blank">DebateHelper</a></h2>
+                            <!-- NO LINK TO SITE <h2><a class="proj-title" href="http://debatehelper.com/" target="_blank">DebateHelper</a></h2> -->
+							<h2>DebateHelper</h2>
                             <hr class="star-primary">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+							<p>DebateHelper is a Microsoft Word Template for high school debaters that I created to solve issues with organization and collaboration within my debate team. I used VBA 7 and XML to design a macro system that makes it easier to keep track of large amounts of information and stay organized. The template is now used by debate teams across the country. Source code is available <a href="http://zachkirsch.com#contact">upon request</a>.</p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Zach Kirsch</a>
-                                    </strong>
-                                </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
+                                    <strong>Summer 2014</strong>
                                 </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
+                                <li>Area:
+                                    <strong>VBA 7</strong>
                                 </li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
