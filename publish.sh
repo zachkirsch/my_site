@@ -18,7 +18,7 @@ mkdir css
 mkdir static
 mkdir img
 
-mput *.html
+mput index.html travel-history.html
 cd css
 lcd css
 mput freelancer.css map-styles.css
