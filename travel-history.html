@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Travel</title>
+<link rel="stylesheet" type="text/css" href="css/map-styles.css" />
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<!-- JQuery -->
+<script src="js/jquery.js"></script>
+
+<script>
+</script>
+
+<script type="text/javascript">
+
+	  var world = false;
+
+      google.load("visualization", "1", {packages:["geochart"]});
+      google.setOnLoadCallback(drawMaps);
+
+
+	$(document).ready(function() {
+	  $("body").click( function() {
+		drawMaps();
+	  });
+	});
+
+	  function drawMaps() {
+		$('#map-canvas').animate({opacity: 0}, 500, function() {
+			if (!world) drawUSMap();
+			else drawWorldMap();
+			world = !world;
+		});
+	  }
+
+      function drawUSMap() {
+
+		var data = google.visualization.arrayToDataTable([
+			['Provinces'],
+          	['Ohio'],
+          	['Pennsylvania'],
+          	['Rhode Island'],
+          	['Georgia'],
+          	['Florida'],
+          	['California'],
+          	['Washington'],
+          	['Arizona'],
+          	['Utah'],
+          	['Minnesota'],
+          	['Texas'],
+          	['Nevada'],
+          	['South Carolina'],
+          	['Massachusetts'],
+          	['Alabama'],
+          	['Tennessee'],
+          	['Missouri'],
+          	['New York'],
+          	['New Jersey'],
+          	['Vermont'],
+          	['Virginia'],
+          	['Kentucky'],
+          	['North Carolina'],
+		]);
+		var options = {
+			region: 'US',
+			resolution: 'provinces',
+			//tooltip: {trigger: 'none'},
+			legend: 'none',
+            backgroundColor: '#71B6D7',
+            defaultColor: '#29576E',
+		};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('map-canvas'));
+
+        chart.draw(data, options);
+		$('#map-canvas').animate({opacity: 1}, 500);
+      }
+
+
+	  function drawWorldMap() {
+		var data2 = google.visualization.arrayToDataTable([
+			['Countries'],
+			['United States'],
+			['Peru'],
+			['Israel'],
+			['Laos'],
+			['Thailand'],
+			['Canada'],
+			['Phillipines'],
+		]);
+		
+		var options2 = {
+			region: 'world',
+			resolution: 'countries',
+			//tooltip: {trigger: 'none'},
+			legend: 'none',
+            backgroundColor: '#71B6D7',
+            defaultColor: '#29576E',
+		}
+
+		var chart2 = new google.visualization.GeoChart(document.getElementById('map-canvas'));
+
+        chart2.draw(data2, options2);
+		$('#map-canvas').animate({opacity: 1}, 500);
+	  }
+
+
+		
+</script>
+
+</head>
+<body>
+<h1>My Travel History</h1>
+<div style="height:95%" id="map-canvas"></div>
+<h3>Click Anywhere to Toggle Maps</h3>
+</body>
+</html>

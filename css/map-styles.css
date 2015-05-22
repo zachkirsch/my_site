@@ -1,0 +1,9 @@
+html, body {
+	height: 90%;
+}
+body {
+	background: #13303F;
+	text-align: center;
+	color: #71B6D7;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
