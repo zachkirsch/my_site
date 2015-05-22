@@ -3,6 +3,10 @@
 <head>
 <title>Travel</title>
 <link rel="stylesheet" type="text/css" href="css/map-styles.css" />
+<link rel="icon" 
+   type="image/png" 
+   href="img/favicon.ico">
+
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 <!-- JQuery -->
@@ -13,10 +17,10 @@
 
 <script type="text/javascript">
 
-	  var world = false;
+	  var world = true;
 
       google.load("visualization", "1", {packages:["geochart"]});
-      google.setOnLoadCallback(drawMaps);
+      google.setOnLoadCallback(drawUSMap);
 
 
 	$(document).ready(function() {
