@@ -21,7 +21,7 @@ mkdir img
 mput *.html
 cd css
 lcd css
-mput freelancer.css
+mput freelancer.css map-styles.css
 cd ../static
 lcd ../static
 mput *
