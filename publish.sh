@@ -27,7 +27,7 @@ lcd ../static
 mput *
 cd ../img
 lcd ../img
-mput *.png
+mput *.png *.ico
 
 close
 bye
