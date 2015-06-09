@@ -36,6 +36,9 @@
 
 	<script>
 		$(document).ready(function(){
+			var orig_header_height = $("#header").height();
+			var orig_contact_height = $("#contact").height();
+	
 			update_div_heights();
 			$( window ).resize(update_div_heights);
 
@@ -44,7 +47,6 @@
 				update_contact_height();
 			}
 
-			var orig_header_height = $("#header").height();
 			function update_header_height() {
 				// header div lengthens so that it covers the whole screen
 				new_height = $(window).height();
@@ -52,7 +54,6 @@
 					$("#header").height( new_height );
 			}
 
-			var orig_contact_height = $("#contact").height();
 			function update_contact_height() {
 				// contact div lengthens so that scroll-down animation from navbar isn't choppy
 				new_height = $(window).height() - $("#navbar").height()*2 - $("#footer").height()*2;
@@ -314,10 +315,10 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <!-- NO LINK TO SITE <h2><a class="proj-title" href="http://debatehelper.com/" target="_blank">DebateHelper</a></h2> -->
+                            <h2><a class="proj-title" href="http://debatehelper.com/" target="_blank">DebateHelper</a></h2>
 							<h2>DebateHelper</h2>
                             <hr class="star-primary">
-							<p>DebateHelper is a Microsoft Word Template for high school debaters that I created to solve issues with organization and collaboration within my debate team. I used VBA 7 and XML to design a macro system that makes it easier to keep track of large amounts of information and stay organized. The template is now used by debate teams across the country. Source code is available upon request.</p>
+							<p><a href="http://debatehelper.com/">DebateHelper</a> is a Microsoft Word Template for high school debaters that I created to solve issues with organization and collaboration within my debate team. I used VBA 7 and XML to design a macro system that makes it easier to keep track of large amounts of information and stay organized. The template is now used by debate teams across the country. Source code is available upon request.</p>
                             <ul class="list-inline item-details">
                                 <li>Date:
                                     <strong>Summer 2014</strong>
