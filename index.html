@@ -44,18 +44,19 @@
 				update_contact_height();
 			}
 
+			var orig_header_height = $("#header").height();
 			function update_header_height() {
 				// header div lengthens so that it covers the whole screen
 				new_height = $(window).height();
-				if (new_height > $("#header").height())
+				if (new_height > orig_header_height)
 					$("#header").height( new_height );
 			}
 
+			var orig_contact_height = $("#contact").height();
 			function update_contact_height() {
 				// contact div lengthens so that scroll-down animation from navbar isn't choppy
-				//new_height = $(window).height() - 270;
 				new_height = $(window).height() - $("#navbar").height()*2 - $("#footer").height()*2;
-				if (new_height > $("#contact").height())
+				if (new_height > orig_contact_height)
 					$("#contact").height( new_height );
 			}
 		});
@@ -177,7 +178,7 @@
                 <div class="col-lg-12">
 					<p>Hi! I'm Zach Kirsch, a sophomore at Tufts University's School of Engineering, and I'm currently pursuing a B.S. in Computer Science and a B.A. in Math.</p>
 					<p>When it comes to programming, most of my experience comes from my courses in school. I've learned a lot about building programs in C++ and websites and servers using HTML and Javascript. I'm always trying to explore different areas of computer science on my own to learn new languages and technologies. Over this summer, I'm trying to build standalone web and mobile applications from the ground up.</p>
-					<p>When I'm not in front of the computer, I enjoy <a id="travel-history" href="travel-history.html" target="_blank">travelling with my family</a> or playing casual game of poker with my friends.</p>
+					<p>When I'm not in front of the computer, I enjoy <a id="travel-history" href="travel-history.html" target="_blank">travelling with my family</a> or playing a casual game of poker with my friends.</p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="static/resume.pdf" target="_blank" class="btn btn-lg btn-outline">
@@ -249,7 +250,7 @@
                         <div class="modal-body">
                             <h2><a class="proj-title" href="boggle/" target="_blank">Boggle</a></h2>
                             <hr class="star-primary">
-							<p>I created the C++ backend of a <a href="boggle/" target="_blank">Boggle game</a> as a capstone project for my Data Structures course. The program features a 2D dynamic array for the board, a radix tree for the dictionary (to enable fast searching), and a recursive algorithm for solving the board. Source code is available <a href="http://zachkirsch.com#contact">upon request</a>.</p>
+							<p>I created the C++ backend of a <a href="boggle/" target="_blank">Boggle game</a> as a capstone project for my Data Structures course. The program features a 2D dynamic array for the board, a radix tree for the dictionary (to enable fast searching), and a recursive algorithm for solving the board. Source code is available upon request.</p>
                             <ul class="list-inline item-details">
                                 <li>Class:
                                     <strong>Data Structures</strong>
@@ -282,7 +283,7 @@
                         <div class="modal-body">
                             <h2><a class="proj-title" href="nickelanddine/" target="_blank">Nickel and Dine</a></h2>
                             <hr class="star-primary">
-							<p>I worked on a team of four to create <a href="nickelanddine/">Nickel and Dine</a> for my Web Programming course. Nickel and Dine is a food delivery service for Tufts students to generate orders that meet each restaurant's delivery minimum and show the <i>final</i> cost of the order (tax, tip, and fees included). We created the server using Node.js, kept track of orders using a MongoDB database, and built the frontend with the help of Bootstrap. Source code is available <a href="http://zachkirsch.com#contact">upon request</a>.</p>
+							<p>I worked on a team of four to create <a href="nickelanddine/">Nickel and Dine</a> for my Web Programming course. Nickel and Dine is a food delivery service for Tufts students to generate orders that meet each restaurant's delivery minimum and show the <i>final</i> cost of the order (tax, tip, and fees included). We created the server using Node.js, kept track of orders using a MongoDB database, and built the frontend with the help of Bootstrap. Source code is available upon request.</p>
                             <ul class="list-inline item-details">
                                 <li>Class:
                                     <strong>Web Programming</strong>
@@ -316,7 +317,7 @@
                             <!-- NO LINK TO SITE <h2><a class="proj-title" href="http://debatehelper.com/" target="_blank">DebateHelper</a></h2> -->
 							<h2>DebateHelper</h2>
                             <hr class="star-primary">
-							<p>DebateHelper is a Microsoft Word Template for high school debaters that I created to solve issues with organization and collaboration within my debate team. I used VBA 7 and XML to design a macro system that makes it easier to keep track of large amounts of information and stay organized. The template is now used by debate teams across the country. Source code is available <a href="http://zachkirsch.com#contact">upon request</a>.</p>
+							<p>DebateHelper is a Microsoft Word Template for high school debaters that I created to solve issues with organization and collaboration within my debate team. I used VBA 7 and XML to design a macro system that makes it easier to keep track of large amounts of information and stay organized. The template is now used by debate teams across the country. Source code is available upon request.</p>
                             <ul class="list-inline item-details">
                                 <li>Date:
                                     <strong>Summer 2014</strong>
