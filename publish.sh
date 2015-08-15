@@ -17,6 +17,8 @@ cd public_html
 mkdir css
 mkdir static
 mkdir img
+mkdir js
+mkdir fonts
 
 mput index.html travel-history.html
 cd css
@@ -28,6 +30,12 @@ mput *
 cd ../img
 lcd ../img
 mput *.png *.ico
+cd ../js
+lcd ../js
+mput *.js
+cd ../fonts
+lcd ../fonts
+mput *
 
 close
 bye
