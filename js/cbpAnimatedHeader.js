@@ -23,17 +23,15 @@ var cbpAnimatedHeader = (function() {
 				setTimeout( scrollPage, 250 );
 			}
 		}, false );
+		
 	}
 
 	function scrollPage() {
 		var sy = scrollY();
 		if ( sy >= changeHeaderOn ) {
-			//classie.add( header, 'navbar-shrink' );
-			classie.remove( name, 'hidden' );
-			classie.add( name, 'show' );
+			classie.add( header, 'navbar-shrink' );
 		}
 		else {
-			//classie.remove( header, 'navbar-shrink' );
 		}
 		didScroll = false;
 	}

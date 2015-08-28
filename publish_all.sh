@@ -15,15 +15,27 @@ user $USER $PASS
 cd public_html
 
 mkdir css
+mkdir static
+mkdir img
 mkdir js
+mkdir fonts
 
-mput index.html
+mput index.html travel-history.html
 cd css
 lcd css
-mput freelancer.css
+mput *.css
+cd ../static
+lcd ../static
+mput *
+cd ../img
+lcd ../img
+mput *.png *.ico
 cd ../js
 lcd ../js
-mput freelancer.js
+mput *.js
+cd ../fonts
+lcd ../fonts
+mput *
 
 close
 bye

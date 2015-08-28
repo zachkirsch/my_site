@@ -143,9 +143,11 @@ header .intro-text .skills {
 
     .navbar-fixed-top .navbar-brand {
         font-size: 2em;
+		/*
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         transition: all .3s;
+		*/
     }
 
     .navbar-fixed-top.navbar-shrink {
@@ -233,18 +235,19 @@ section.success a.active {
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    background: rgba(67,122,149,.8);
-/*
-    -webkit-transition: all ease .2s;
-    -moz-transition: all ease .2s;
-    transition: all ease .2s;
-*/
+	background: rgba(67,122,149,.8);
+	opacity: 0;
+	/*
+		-webkit-transition: all ease .2s;
+		-moz-transition: all ease .2s;
+		transition: all ease .2s;
+	*/
 }
 
 .portfolio .portfolio-item .portfolio-link .caption:hover {
-    opacity: 1;
+	opacity: 1;
 }
+
 
 .portfolio .portfolio-item .portfolio-link .caption .caption-content {
     position: absolute;
@@ -540,7 +543,7 @@ footer .footer-below {
 .verticalLine {
 	border-left: #d3d3d3 solid 1px;
 	height: 30px;
-	margin-left: 33px;
+	margin-left: 25px;
 	width: 1px;
 }
 @media(max-width:991px) {
@@ -552,8 +555,30 @@ footer .footer-below {
 @media(min-width:992px) {
 	.portfolio .portfolio-item .portfolio-link {
 		border: solid white 2px;
+		opacity: .5;
 	}
 	.portfolio .portfolio-item .portfolio-link.active {
 		border: solid black 2px;
+		opacity: 1;
 	}
+}
+
+.navbar-brand {
+	display: none;
+}
+
+#me-img {
+	height: 199px;
+}
+
+#next-portfolio-item {
+	font-size: 30px;
+	color: #437A95;
+	-webkit-text-fill-color: white; /* Will override color (regardless of order) */
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: #437A95;
+	display: none; /* shown via js on big screens */
+}
+#next-portfolio-item:hover {
+	-webkit-text-fill-color: #437A95;
 }
