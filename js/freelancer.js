@@ -4,7 +4,7 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-var MOBILE_CUTOFF = 801
+var MOBILE_CUTOFF = 767
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
@@ -45,13 +45,16 @@ var CHANGING_HEADER = true
 var CHANGING_CONTACT = true
 var CHANGING_PORTFOLIO = true
 
-var orig_header_height = $("#header").height();
-var orig_contact_height = $("#contact").height();
-var orig_portfolio_height = $("#portfolio").height();
-
+var orig_header_height = 0
+var orig_contact_height = 0
+var orig_portfolio_height = 0
 update_div_heights();
 
 $(document).ready(function(){
+	orig_header_height = $("#header").height();
+	orig_contact_height = $("#contact").height();
+	orig_portfolio_height = $("#portfolio").height();
+
 	$( window ).resize(function() {
 		update_div_heights()
 		if ($(window).width() <= MOBILE_CUTOFF) {
@@ -110,12 +113,12 @@ function update_contact_height() {
 }
 
 function update_height($this, height) {
-	$this.css('min-height', height.toString() + 'px')
-	/*
+	//$this.css('min-height', height.toString() + 'px')
+
+	$this.stop(true)
 	$this.animate({
 		'min-height': height.toString() + 'px'
 	}, 500)
-	*/
 }
 
 
@@ -126,17 +129,52 @@ var started_animation = false
 
 $(document).ready(function(){
 
+	// start them invisible and show after aligned					
+	if ($(window).width() > MOBILE_CUTOFF) {
+		var scrolled_down = $(this).scrollTop() > $("#portfolio").offset().top-200
+		started_animation = scrolled_down
+	
+		$("#in-page-proj-info").css('opacity', 0)
+		$("#in-page-proj-info").show()
+	
+		$(".portfolio-icons").show()
+
+		showPortfolioItemInPage($(".portfolio-link").first(), false, function() {
+
+			$("#next-portfolio-item").show()
+			$("#next-portfolio-item").css('line-height', ($("#in-page-proj-info").height()).toString() + 'px')
+		
+			$(".portfolio-icons").css('opacity', 0)
+			setTimeout(function() {
+				centerPortfolioIcons(function() {
+					if (!scrolled_down) $("#in-page-proj-info").css('opacity', 0)
+				})
+			}, 50)
+			$(".portfolio-icons").css('opacity', 1)
+		})
+	}
+
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > $("#portfolio").offset().top-200 && $(window).width() > MOBILE_CUTOFF) {
 			if (!started_animation) {
 				started_animation = true
-				animate_icons()
-				showPortfolioItemInPage($(".portfolio-link").first(), true, function() {
-					$("#next-portfolio-item").css('line-height', ($("#in-page-proj-info").height()).toString() + 'px')
-					$("#next-portfolio-item").show()
-				})
+				if(ANIMATING_ICONS) animate_icons()
+
+				$("#in-page-proj-info").delay(300).animate({
+		            opacity: 1
+       			}, 540)	
 			}
 		}
+	});
+
+	$( window ).resize(function() {
+		if ($(window).width() < MOBILE_CUTOFF) {
+			$("#next-portfolio-item").hide()
+		}
+		else {
+			$("#next-portfolio-item").show()
+		}
+		centerPortfolioIcons()
 	});
 
 	$(".portfolio-link .caption").hover(function() {
@@ -186,8 +224,6 @@ $(document).ready(function(){
 });
 
 function animate_icons() {
-	if (!ANIMATING_ICONS) return;
-
 	// this goes recursively until icons are hovered
 	$(".portfolio-link .caption").animate({
 			opacity: .75 
@@ -202,13 +238,21 @@ function showPortfolioItemInPage($this, fade, _callback) {
 	$(".portfolio-link").removeClass("active")
 	$this.addClass("active")
 	if (fade) {
-		$("#in-page-proj-info").fadeOut(function() {
+		$("#in-page-proj-info").stop(true, true).animate({
+            opacity: 0
+        }, 300, function() {
 			$("#in-page-proj-info").html(this_modal.find(".modal-body").html())
-			$("#in-page-proj-info").fadeIn()
-			cleanUpItem(_callback)
-		});
+			cleanUpItem(function() {
+				$("#in-page-proj-info").animate({
+					opacity: 1
+				}, 300, function() {
+					if (_callback != undefined) _callback()
+				})
+			})
+		});    
 	}
 	else {
+		$("#in-page-proj-info").css('opacity', 1)
 		$("#in-page-proj-info").html(this_modal.find(".modal-body").html())
 		cleanUpItem(_callback)
 	}
@@ -220,6 +264,13 @@ function cleanUpItem(_callback) {
 	$("#in-page-proj-info").find("hr").removeClass("star-primary")
 	update_portfolio_height();
 
+	if (_callback != undefined) _callback()
+}
+
+function centerPortfolioIcons(_callback) {
+	margin = (($("#in-page-proj-info").height()-$(".portfolio-icons").height())/2)
+	margin = Math.max(30, margin)
+	$(".portfolio-icons").css('margin-top', margin.toString() + 'px')
 	if (_callback != undefined) _callback()
 }
 
@@ -240,3 +291,39 @@ $(document).ready(function(){
 		}
 	});
 });
+
+// close modal on 'contact me' click
+$(document).ready(function() {
+	$('a[href="#contact"]').click(function() {
+		$(".modal").modal('hide')
+	})
+})
+
+
+// modal openers are clickable
+$(document).ready(function() {
+
+	if ($(window).width() <= MOBILE_CUTOFF) 
+		$(".portfolio-item").addClass('clickable')
+	else $(".portfolio-item").removeClass('clickable')
+
+	$( window ).resize(function() {
+		if ($(window).width() <= MOBILE_CUTOFF) 
+			$(".portfolio-item").addClass('clickable')
+		else $(".portfolio-item").removeClass('clickable')
+	})
+
+})
+
+
+
+
+
+console.log(" ______           _       _   ___               _     ")
+console.log("|___  /          | |     | | / (_)             | |    ")
+console.log("   / /  __ _  ___| |__   | |/ / _ _ __ ___  ___| |__  ")
+console.log("  / /  / _` |/ __| '_ \\  |    \\| | '__/ __|/ __| '_ \\ ")
+console.log("./ /__| (_| | (__| | | | | |\\  \\ | |  \\__ \\ (__| | | |")
+console.log("\\_____/\\__,_|\\___|_| |_| \\_| \\_/_|_|  |___/\\___|_| |_|")
+
+

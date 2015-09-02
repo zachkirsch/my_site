@@ -277,7 +277,7 @@ a.proj-title {
 	color: black;
 }
 
-@media(min-width:992px) {
+@media(min-width:768px) {
 	.portfolio .portfolio-item {
 		margin-bottom: 0;
 	}
@@ -532,27 +532,37 @@ footer .footer-below {
 	margin-top: 30px;
 }
 
-.in-page h2, .in-page ul {
+#in-page-proj-info h2, #in-page-proj-info ul {
 	text-align: center;
 }
-.in-page .proj-title {
+#in-page-proj-info .proj-title {
     text-transform: none;
 	color: gray;
 }
 
 .verticalLine {
 	border-left: #d3d3d3 solid 1px;
-	height: 30px;
-	margin-left: 25px;
 	width: 1px;
+	margin: 2px auto;
 }
-@media(max-width:991px) {
+@media(min-width:992px) {
+	.verticalLine {
+		height: 30px;
+	}
+}
+@media(min-width:767px) and (max-width:991px) {
+	.verticalLine {
+		height: 15px;
+		margin: 1px auto;
+	}
+}
+@media(max-width:767px) {
 	.verticalLine {
 		display: none;
 	}
 }
 
-@media(min-width:992px) {
+@media(min-width:768px) {
 	.portfolio .portfolio-item .portfolio-link {
 		border: solid white 2px;
 		opacity: .5;
