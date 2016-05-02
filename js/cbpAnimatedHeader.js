@@ -4,42 +4,42 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
 var cbpAnimatedHeader = (function() {
 
-	var docElem = document.documentElement,
-		header = document.querySelector( '.navbar-fixed-top' ),
-		name = document.querySelector( '.navbar-brand' ),
-		didScroll = false,
-		changeHeaderOn = 300;
+  var docElem = document.documentElement,
+    header = document.querySelector( '.navbar-fixed-top' ),
+    name = document.querySelector( '.navbar-brand' ),
+    didScroll = false,
+    changeHeaderOn = 300;
 
-	function init() {
-		window.addEventListener( 'scroll', function( event ) {
-			if( !didScroll ) {
-				didScroll = true;
-				setTimeout( scrollPage, 250 );
-			}
-		}, false );
-		
-	}
+  function init() {
+    window.addEventListener( 'scroll', function( event ) {
+      if( !didScroll ) {
+        didScroll = true;
+        setTimeout( scrollPage, 250 );
+      }
+    }, false );
 
-	function scrollPage() {
-		var sy = scrollY();
-		if ( sy >= changeHeaderOn ) {
-			classie.add( header, 'navbar-shrink' );
-		}
-		else {
-		}
-		didScroll = false;
-	}
+  }
 
-	function scrollY() {
-		return window.pageYOffset || docElem.scrollTop;
-	}
+  function scrollPage() {
+    var sy = scrollY();
+    if ( sy >= changeHeaderOn ) {
+      classie.add( header, 'navbar-shrink' );
+    }
+    else {
+    }
+    didScroll = false;
+  }
 
-	init();
+  function scrollY() {
+    return window.pageYOffset || docElem.scrollTop;
+  }
+
+  init();
 
 })();

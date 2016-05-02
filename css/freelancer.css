@@ -105,6 +105,11 @@ header img {
     margin: 0 auto 20px;
 }
 
+#contact img {
+    display block;
+    margin: 0px auto;
+}
+
 header .intro-text .name {
     display: block;
     text-transform: uppercase;
@@ -143,11 +148,11 @@ header .intro-text .skills {
 
     .navbar-fixed-top .navbar-brand {
         font-size: 2em;
-		/*
+    /*
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         transition: all .3s;
-		*/
+    */
     }
 
     .navbar-fixed-top.navbar-shrink {
@@ -205,7 +210,7 @@ section.success a.active {
 }
 
 #travel-history {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 @media(max-width:767px) {
@@ -221,7 +226,7 @@ section.success a.active {
 .portfolio .portfolio-item {
     right: 0;
     margin-top: 0;
-	margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .portfolio .portfolio-item .portfolio-link {
@@ -235,17 +240,17 @@ section.success a.active {
     position: absolute;
     width: 100%;
     height: 100%;
-	background: rgba(67,122,149,.8);
-	opacity: 0;
-	/*
-		-webkit-transition: all ease .2s;
-		-moz-transition: all ease .2s;
-		transition: all ease .2s;
-	*/
+  background: rgba(67,122,149,.8);
+  opacity: 0;
+  /*
+    -webkit-transition: all ease .2s;
+    -moz-transition: all ease .2s;
+    transition: all ease .2s;
+  */
 }
 
 .portfolio .portfolio-item .portfolio-link .caption:hover {
-	opacity: 1;
+  opacity: 1;
 }
 
 
@@ -274,16 +279,16 @@ section.success a.active {
 }
 
 a.proj-title {
-	color: black;
+  color: black;
 }
 
 @media(min-width:768px) {
-	.portfolio .portfolio-item {
-		margin-bottom: 0;
-	}
-	.portfolio .portfolio-item .caption-content {
-		display: none;
-	}
+  .portfolio .portfolio-item {
+    margin-bottom: 0;
+  }
+  .portfolio .portfolio-item .caption-content {
+    display: none;
+  }
 }
 @media(min-width:767px) {
     .portfolio .portfolio-item {
@@ -422,8 +427,8 @@ footer .footer-below {
     border-radius: 100%;
     font-size: 20px;
     line-height: 28px;
-	background-color: rgba(51, 122, 183, .5);
-	border-color: rgba(46,109,164, .5)
+  background-color: rgba(51, 122, 183, .5);
+  border-color: rgba(46,109,164, .5)
 }
 
 .scroll-top .btn:focus {
@@ -442,7 +447,7 @@ footer .footer-below {
 }
 
 .modal-body p {
-	text-align: justify;
+  text-align: justify;
     text-justify: inter-word;
 }
 
@@ -515,12 +520,12 @@ footer .footer-below {
 }
 
 .clickable {
-	cursor: pointer;
-	cursor: hand;
+  cursor: pointer;
+  cursor: hand;
 }
 
 .clickable {
-	-webkit-touch-callout: none;
+  -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -529,66 +534,66 @@ footer .footer-below {
 }
 
 .portfolio-icons {
-	margin-top: 30px;
+  margin-top: 30px;
 }
 
 #in-page-proj-info h2, #in-page-proj-info ul {
-	text-align: center;
+  text-align: center;
 }
 #in-page-proj-info .proj-title {
     text-transform: none;
-	color: gray;
+  color: gray;
 }
 
 .verticalLine {
-	border-left: #d3d3d3 solid 1px;
-	width: 1px;
-	margin: 2px auto;
+  border-left: #d3d3d3 solid 1px;
+  width: 1px;
+  margin: 2px auto;
 }
 @media(min-width:992px) {
-	.verticalLine {
-		height: 30px;
-	}
+  .verticalLine {
+    height: 30px;
+  }
 }
 @media(min-width:767px) and (max-width:991px) {
-	.verticalLine {
-		height: 15px;
-		margin: 1px auto;
-	}
+  .verticalLine {
+    height: 15px;
+    margin: 1px auto;
+  }
 }
 @media(max-width:767px) {
-	.verticalLine {
-		display: none;
-	}
+  .verticalLine {
+    display: none;
+  }
 }
 
 @media(min-width:768px) {
-	.portfolio .portfolio-item .portfolio-link {
-		border: solid white 2px;
-		opacity: .5;
-	}
-	.portfolio .portfolio-item .portfolio-link.active {
-		border: solid black 2px;
-		opacity: 1;
-	}
+  .portfolio .portfolio-item .portfolio-link {
+    border: solid white 2px;
+    opacity: .5;
+  }
+  .portfolio .portfolio-item .portfolio-link.active {
+    border: solid black 2px;
+    opacity: 1;
+  }
 }
 
 .navbar-brand {
-	display: none;
+  display: none;
 }
 
 #me-img {
-	height: 199px;
+  height: 199px;
 }
 
 #next-portfolio-item {
-	font-size: 30px;
-	color: #437A95;
-	-webkit-text-fill-color: white; /* Will override color (regardless of order) */
-	-webkit-text-stroke-width: 2px;
-	-webkit-text-stroke-color: #437A95;
-	display: none; /* shown via js on big screens */
+  font-size: 30px;
+  color: #437A95;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #437A95;
+  display: none; /* shown via js on big screens */
 }
 #next-portfolio-item:hover {
-	-webkit-text-fill-color: #437A95;
+  -webkit-text-fill-color: #437A95;
 }

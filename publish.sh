@@ -1,29 +1,47 @@
-#!/bin/bash
-HOST=ftp.zachkirsch.com  #This is the FTP servers host or IP address.
-USER=zachkirsch          #This is the FTP user that has access to the server.
+#!/bin/bash    
+HOST="ftp.zachkirsch.com"
+USER="zachkirsch"
+LCD="~/Documents/Developer/my_site"
+RCD="/public_html"
+#DELETE="--delete"
+FAIL_EXIT="set cmd:fail-exit yes;"
+
+
+
+
+# ---------------------------------- #
+# ---------------------------------- #
+# ---------------------------------- #
 
 # Read Password
 echo -n "Password: "
 read -s PASS
+echo
+FTPURL="ftp://$USER:$PASS@$HOST"
 
-# Send to site at godaddy server
+# check if mkdir required
+echo 'Checking if directory needs to be created on server...'
+checkfolder=$(lftp -c "open -u $USER,$PASS $FTPURL; ls $RCD")
+if [ "$checkfolder" == "" ];
+then
+	MKDIR="mkdir $RCD;"
+	echo "  Directory created"
+else
+	echo "  Directory already exists"
+fi
 
-## ENTERING FTP SHELL ##
-ftp -in << EOF
-open $HOST
-user $USER $PASS
-cd public_html
-
-mkdir css
-mkdir js
-
-mput index.html
-cd css
-lcd css
-mput freelancer.css
-cd ../js
-lcd ../js
-mput freelancer.js
-
-close
-bye
+echo 'Uploading modified files...'
+lftp -c "
+$FAIL_EXIT
+open '$FTPURL';
+lcd $LCD;
+$MKDIR
+cd $RCD;
+mirror --reverse \
+	   $DELETE \
+	   --verbose \
+	   --exclude-glob .git/ \
+	   --exclude-glob .DS_Store \
+	   --exclude-glob *.sh \
+	   --exclude-glob .* \
+	   --exclude-glob unused/"
