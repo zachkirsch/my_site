@@ -1,4 +1,4 @@
-#!/bin/bash    
+#!/bin/bash
 HOST="ftp.zachkirsch.com"
 USER="zachkirsch"
 LCD="~/Documents/Developer/my_site"
@@ -24,10 +24,10 @@ echo 'Checking if directory needs to be created on server...'
 checkfolder=$(lftp -c "open -u $USER,$PASS $FTPURL; ls $RCD")
 if [ "$checkfolder" == "" ];
 then
-	MKDIR="mkdir $RCD;"
-	echo "  Directory created"
+    MKDIR="mkdir $RCD;"
+    echo "  Directory created"
 else
-	echo "  Directory already exists"
+    echo "  Directory already exists"
 fi
 
 echo 'Uploading modified files...'
@@ -38,10 +38,10 @@ lcd $LCD;
 $MKDIR
 cd $RCD;
 mirror --reverse \
-	   $DELETE \
-	   --verbose \
-	   --exclude-glob .git/ \
-	   --exclude-glob .DS_Store \
-	   --exclude-glob *.sh \
-	   --exclude-glob .* \
-	   --exclude-glob unused/"
+       $DELETE \
+       --verbose \
+       --exclude-glob .git/ \
+       --exclude-glob .DS_Store \
+       --exclude-glob *.sh \
+       --exclude-glob .* \
+       --exclude-glob unused/"
